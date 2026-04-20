@@ -27,6 +27,12 @@ Stock market prices are highly dynamic and difficult to forecast manually. Tradi
   - .h5 (deep learning models)
   - .pkl (scalers and ARIMA artifacts)
   - .csv (datasets and outputs)
+- Models that i used in this is :
+   - LSTM
+   - Stacked LSTM
+   - GRU
+   - ARIMA
+   
 
 ## Project Structure
 ```text
