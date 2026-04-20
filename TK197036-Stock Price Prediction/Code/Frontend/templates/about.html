@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Stock Price Forecasting Using Machine Learning</title>
+
+    <!-- slider stylesheet -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css" />
+    <!-- font awesome style -->
+    <link rel="stylesheet" type="text/css" href="/static/css/font-awesome.min.css" />
+
+    <!-- Custom styles for this template -->
+    <link href="/static/css/style.css" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="/static/css/responsive.css" rel="stylesheet" />
+  </head>
+
+
+  <div style="background-color: rgba(0, 0, 0, 0.334); height: 650px;">
+    <body style="background-color: beige;">
+      <header class="header_section">
+        <div style="background-color: rgba(0, 0, 0, 0.427);" class="header_bottom">
+          <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg custom_nav-container ">
+              <a class="navbar-brand" href="#">
+                <!-- <img src="/static/images/icon.gif"> -->
+                <span style="color: white; margin-left: 8px;">
+                  Pridicting Stock Price Using Machine Learning
+                </span>
+              </a>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ">
+                  <li class="nav-item">
+                    <a style="color: white;" class="nav-link" href="{{url_for('home')}}"> <h5>UserHome</h5> <span class="sr-only">(current)</span></a>
+                  </li>
+            
+                  <li class="nav-item">
+                    <a style="color: white;" class="nav-link active" href="{{url_for('algorithm')}}"> <h5>Accuracy</h5> <span class="sr-only">(current)</span></a>
+                  </li>
+            
+                  <li class="nav-item">
+                    <a style="color: white;" class="nav-link active" href="{{url_for('prediction')}}"><h5>Predict Stock</h5> </a>
+                  </li>
+                  <li class="nav-item">
+                    <a style="color: yellow;" class="nav-link active" href="{{url_for('about')}}"><h5>About/Result Graphs</h5> </a>
+                  </li>
+                  <li class="nav-item">
+                    <a style="color: white;" class="nav-link" href="{{url_for('index')}}">LogOut</a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </header>
+    
+      <center>
+        <section style="margin-top: 10px; padding: 50px; background-color: aquamarine;">
+            <div class="detail-box">
+                <h1>ABOUT PROJECT</h1>
+                <h4 style="text-align: justify;">
+                    "This project explores the forecasting of stock prices using various advanced machine learning and statistical techniques. The dataset utilized consists of 2,417 records of historical stock market data, including features such as Adj Close, Open, High, Low, Close prices, and Volume."
+                </h4>
+                <p style="text-align: justify;">
+                    The core focus of the project is to evaluate the performance of several predictive models, specifically Long Short-Term Memory (LSTM) networks, Stacked LSTM networks, Gated Recurrent Units (GRU), Stacked GRU networks, and the Autoregressive Integrated Moving Average (ARIMA) model. LSTM and GRU are types of Recurrent Neural Networks (RNNs) that are particularly effective in handling time-series data due to their ability to capture long-term dependencies. Stacked versions of these networks aim to improve performance by increasing the depth of the model, which can help in learning more complex patterns from the data.
+                    The dataset encompasses essential stock metrics such as opening, closing, highest, and lowest prices along with trading volume. By applying these diverse forecasting techniques, the project aims to determine which model offers the most accurate predictions for future stock prices. The comparison of these methods highlights their strengths and limitations, providing insights into their suitability for financial forecasting tasks. This evaluation is critical for developing robust models capable of guiding investment strategies and decision-making in stock market contexts.
+                </p>
+            </div>
+        </section>
+    
+        <section id="contact" style="background-color: antiquewhite;">
+            <div class="section-title">
+                <h2>Result Graphs</h2>
+            </div><br><br>
+    
+            <div class="image-container">
+                <img src="/static/graphs/arima_sbi.png" alt="Graph A">
+            </div><br><br>
+    
+            <div class="image-container">
+                <img src="/static/graphs/gru_asisbank.png" alt="Graph B">
+            </div><br><br>
+    
+            <div class="image-container">
+                <img src="/static/graphs/lstm_hdfc.png" alt="Graph C">
+            </div><br><br>
+    
+            <div class="image-container">
+                <img src="/static/graphs/stak_idnainbank.png" alt="Graph D">
+            </div><br><br>
+
+            <div class="image-container">
+              <img src="/static/graphs/r2_score.png" alt="Graph D">
+          </div><br><br>
+
+          <div class="image-container">
+            <img src="/static/graphs/total_com.png" alt="Graph D">
+        </div><br><br>
+
+
+        </section>
+      </center>
+        
+      {% if message %}
+        <script>
+          alert("{{ message }}")        
+        </script>
+      {% endif %}
+
+      <script src="/static/js/jquery-3.4.1.min.js"></script>
+      <script src="/static/js/bootstrap.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+      </script>
+      <script src="/static/js/custom.js"></script>
+      <!-- Google Map -->
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
+      <!-- End Google Map -->
+    </body>
+  </div>
+
+</html>

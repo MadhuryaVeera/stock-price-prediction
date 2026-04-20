@@ -1,0 +1,53 @@
+{% extends "home.html" %}
+{% block content %}
+  <center>
+    <section class="algo-section">
+      <h2 style="color: #1d3557;">Select Forecasting Algorithm & Bank</h2>
+      <br>
+      <form method="POST" action="{{ url_for('algorithm') }}">
+        <select class="form-select" name="algorithm" required style="height: 60px; width: 300px; text-align:center;">
+          <option hidden>Select Algorithm</option>
+          <option value="ARIMA" {% if algorithm == "ARIMA" %}selected{% endif %}>ARIMA</option>
+          <option value="LSTM" {% if algorithm == "LSTM" %}selected{% endif %}>LSTM</option>
+          <option value="S-LSTM" {% if algorithm == "S-LSTM" %}selected{% endif %}>Stacked LSTM</option>
+          <option value="GRU" {% if algorithm == "GRU" %}selected{% endif %}>GRU</option>
+        </select>
+        <br>
+        <br>
+        <select class="form-select" name="bank" required style="height: 60px; width: 300px; text-align:center;">
+          <option hidden>Select Bank</option>
+          {% for bank in bank_list %}
+            <option value="{{ bank }}" {% if bank == selected_bank %}selected{% endif %}>{{ bank }}</option>
+          {% endfor %}
+        </select>
+        <br>
+        <br><br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </section>
+
+    {% if algo_data %}
+      <section style="margin-top: 30px; background-color: #f1faee; padding: 20px; border-radius: 10px;">
+        <h4 style="color: #2a9d8f;">Performance of {{ algorithm }} on {{ selected_bank }}</h4>
+        <table style="margin-top: 20px; border-collapse: collapse; width: 60%; font-size: 16px;">
+          <tr style="background-color: #48cae4; color: #023047;">
+            <th style="padding: 12px; text-align:center;">Bank</th>
+            <th style="padding: 12px; text-align:center;">MSE</th>
+            <th style="padding: 12px; text-align:center;">RMSE</th>
+            <th style="padding: 12px; text-align:center;">MAE</th>
+            <th style="padding: 12px; text-align:center;">Accuracy (%)</th>
+          </tr>
+          {% for row in algo_data %}
+            <tr style="background-color: #e0f7fa;">
+              <td style="text-align: center;">{{ row.Bank }}</td>
+              <td style="text-align: center;">{{ row.MSE }}</td>
+              <td style="text-align: center;">{{ row.RMSE }}</td>
+              <td style="text-align: center;">{{ row.MAE }}</td>
+              <td style="text-align: center;">{{ row.Accuracy }}</td>
+            </tr>
+          {% endfor %}
+        </table>
+      </section>
+    {% endif %}
+  </center>
+{% endblock %}

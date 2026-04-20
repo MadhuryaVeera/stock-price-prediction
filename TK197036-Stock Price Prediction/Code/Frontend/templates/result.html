@@ -1,0 +1,32 @@
+{% extends 'home.html' %}
+
+{% block navbar %}
+  <!-- Navbar content -->
+{% endblock %}
+
+{% block content %}
+  <section style="margin-top: -100x;" class="contact_section layout_padding">
+    <div class="container">
+      <center>
+        <!-- <h2 style="color: white; font-weight: bold; margin-top:-50px;">Recommended Courses:</h2> -->
+        <center>
+          <h2 style="color: white;">Predicted Prices for Next 5 Days:</h2>
+          <ul style="list-style-type: none;">
+            <h3 style="background-color: #FFFFFF;  width: 240px">
+            <li style="color: #FF5733;">Day 1: ${{ '%.2f' % (predictions[0] / 100) }}</li>
+            <li style="color: #33FF57;">Day 2: ${{ '%.2f' % (predictions[1] / 100) }}</li>
+            <li style="color: #3357FF;">Day 3: ${{ '%.2f' % (predictions[2] / 100) }}</li>
+            <li style="color: #FF33A6;">Day 4: ${{ '%.2f' % (predictions[3] / 100) }}</li>
+            <li style="color: #FF9933;">Day 5: ${{ '%.2f' % (predictions[4] / 100) }}</li>
+          </h3>
+        </ul>
+        
+        </center>
+        <br>
+        <form action="{{ url_for('prediction') }}">
+          <button style="border-radius: 5px; background-color: green; color: white; padding: 10px 20px; font-size: 16px;" type="submit">Predict Again</button>
+        </form>
+      </center>
+    </div>
+  </section>
+{% endblock %}
