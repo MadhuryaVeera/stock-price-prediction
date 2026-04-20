@@ -1,4 +1,4 @@
-# Stock Price Prediction
+# Stock Price Prediction Using Machine Learning Using LSTM & GRU.
 
 A final-year project that predicts stock prices for selected Indian banking stocks using multiple models (ARIMA, LSTM, GRU, and Stacked LSTM) and serves results through a Flask web application.
 
