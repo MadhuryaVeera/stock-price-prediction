@@ -77,6 +77,12 @@ TK200773-Stock Price Prediction/
    - python app.py
 9. Open the local Flask URL shown in terminal (usually http://127.0.0.1:5000).
 
+## Project Flow
+
+<p align="center">
+  <img src="assets/project_flow.png" alt="Project Flow" width="800"/>
+</p>
+
 ## Notes
 - The project already includes trained model files and scaler files for supported banks.
 - Forecast plots are generated under the static folder when predictions are made.
