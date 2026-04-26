@@ -80,8 +80,9 @@ TK200773-Stock Price Prediction/
 6. Import schema from db.sql.
 7. Update MySQL credentials in app.py if needed.
 8. Run the app:
+   - conda activate myenv
    - python app.py
-9. Open the local Flask URL shown in terminal (usually http://127.0.0.1:5000).
+10. Open the local Flask URL shown in terminal (usually http://127.0.0.1:5000).
 
 
 
